@@ -1,0 +1,12 @@
+acessar o database.php e colocar usuario e senha do banco na tag mysql
+configurar o arquivo .env para passar os parametros do banco
+php artisan make:(model/view/controller) NomeDoArquivo
+acessar o VerifyCsrfToken.php e incluir os caminhos dentro das excessoes
+protected $except = [
+        '/*'
+        '/funcionarios/*'
+        '/exemplo/*'
+    ];
+
+npm install
+npm run dev
