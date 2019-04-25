@@ -21,24 +21,19 @@ Route::get('/login', function(){
 
 Route::get('/funcionario', 'FuncionarioController@listaFuncionario');
 
-Route::get('/contrato', function(){
-	return view('contrato');
-});
-
-Route::get('/avaliacao', function(){
-	return view('avaliacao');
-});
 
 Route::prefix('/cadastro')->group(function(){
-	Route::post('/funcionario', function(){
-		return view('cadfuncionario');
-	});
+	
+	Route::get('/funcionario', 'FuncionarioController@formularioFuncionario');
+
+	Route::post('/funcionario/adicionar', 'FuncionarioController@adicionaFuncionario');
+	
+	Route::post('/contrato', 'ContratoController@formularioContrato');
+
 	Route::post('/avaliacao', function(){
 		return view('cadavaliacao');
 	});
-	Route::post('/contrato', function(){
-		return view('cadcontrato');
-	});
+	
 	Route::post('/usuario', function(){
 		return view('cadusuario');
 	});
@@ -51,4 +46,12 @@ Route::prefix('/busca')->group(function(){
 	Route::get('/usuario', function(){
 		return view('busuario');
 	});
+});
+
+Route::get('/contrato', function(){
+	return view('contrato');
+});
+
+Route::get('/avaliacao', function(){
+	return view('avaliacao');
 });
