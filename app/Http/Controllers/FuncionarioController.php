@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Funcionario;
+use App\Funcionario;
 
 class FuncionarioController extends Controller{
     
@@ -22,7 +22,7 @@ class FuncionarioController extends Controller{
 		return view('cadFuncionario', compact('cargos'));
 	}
 
-	public function adicionaFuncionario(){
+	public function adicionaFuncionario(Request $request){
 
 		/*
 		$parametros = Request::all();
@@ -30,11 +30,11 @@ class FuncionarioController extends Controller{
 		
 		$funcionario->save();
 		*/
-
-		Funcionario::create(Request::all());
-
-		//mantem os valores das variaveis acessiveis para a pagina de contrato
-		return redirect('/cadastro/contrato')->withInput();
+		
+		$funcionario = Funcionario::create($request->all()); //pesquisar -> form request
+		
+		//mantem os valores das variaveis acessiveis para a pagina de contrato = withInput();
+		return redirect('/cadastro/contrato')->with('cod_funcionario', $funcionario->cod_funcionario);
 	}
 
 }

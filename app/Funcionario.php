@@ -13,5 +13,5 @@ class Funcionario extends Model
     public $timestamps = false;
 
     //delimita quais paramentros sao aceitos com o request::all() do controler
-    protected $fillable = array('cpf', 'nome', 'telefone1','telefone2','cod_cargo');
+    protected $fillable = array('cod_funcionario', 'cpf_funcionario', 'nome_funcionario', 'telefone1','telefone2','cod_cargo');
 }

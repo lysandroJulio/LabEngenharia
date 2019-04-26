@@ -12,11 +12,11 @@
 		<table class="table">
 			<tr>
 				<td>CPF:</td>
-				<td><input class="form-control" type="text" name="cpf" id="cpf"> </td>
+				<td><input class="form-control" type="text" name="cpf_funcionario" id="cpf"> </td>
 			</tr>
 			<tr>
 				<td>Nome:</td>
-				<td><input class="form-control" type="text" name="nome" id="nome"> </td>
+				<td><input class="form-control" type="text" name="nome_funcionario" id="nome"> </td>
 			</tr>
 			<tr>
 				<td>Telefone Fixo:</td>
@@ -51,12 +51,12 @@
 		
 		function validarDados(){
 			var msg = "";
-			var texto = document.getElementById("cpf").value;
+			var texto = document.getElementById("cpf_funcionario").value;
 			var n = texto.length;
 			if (document.getElementById("cpf").value == ""){
 				msg += "CPF;\n";
 			}				
-			if (document.getElementById("nome").value == ""){
+			if (document.getElementById("nome_funcionario").value == ""){
 				msg += "Nome;\n";
 			}
 			if (document.getElementById("telefone1").value == ""){
