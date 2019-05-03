@@ -9,7 +9,7 @@
 	<table class="table">
 		@foreach($funcionarios as $funcionario)
 		<tr>
-			<td> {{$funcionario->CPF_funcionario}} </td>
+			<td> {{$funcionario->cpf_funcionario}} </td>
 			<td> {{$funcionario->nome_funcionario}} </td>
 			<td> {{$funcionario->telefone1}} </td>
 		</tr>

@@ -4,7 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Contrato extends Model{
+class Contrato extends Model
+{
     //vincula a classe a tabela no banco
 	protected $table = 'contrato';
     

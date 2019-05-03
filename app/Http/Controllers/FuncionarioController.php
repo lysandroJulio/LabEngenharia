@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Funcionario;
+use Illuminate\Routing\Redirector;
 
 class FuncionarioController extends Controller{
     
@@ -34,7 +35,8 @@ class FuncionarioController extends Controller{
 		$funcionario = Funcionario::create($request->all()); //pesquisar -> form request
 		
 		//mantem os valores das variaveis acessiveis para a pagina de contrato = withInput();
-		return redirect('/cadastro/contrato')->with('cod_funcionario', $funcionario->cod_funcionario);
+		//return redirect('/cadastro/contrato/$id'); //->with('cod_funcionario', $funcionario->id);
+		return redirect()->route('contrato', [$funcionario]);
 	}
 
 }

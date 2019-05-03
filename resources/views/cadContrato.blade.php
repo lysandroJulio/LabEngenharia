@@ -8,7 +8,7 @@
 	
 	<form action="/labengenharia/public/cadastro/contrato/adicionar" method="post">
 		<h1>Adicionando o Contrato do funcionario </h1> 
-		@//{{old('nome_funcionario')}}
+		<input type="hidden" name="_token" value="{{csrf_token()}}"/>
 		<table class="table">
 			<tr>
 				<td>Data de Admissão:</td>
@@ -34,8 +34,8 @@
 				<td>Obra Trabalhada:</td>
 				<td>
 					<input class="form-control" type="text" name="obra_trabalhada">
-					<input class="form-control" type="text" value="<?php $cod_funcionario ?>" name="cod_funcionario">
-
+				
+					<input class="form-control" type="hidden" value="{{$cod_funcionario}}" name="cod_funcionario">
 				</td>
 			</tr>
 			<tr>		

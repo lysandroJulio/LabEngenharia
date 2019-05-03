@@ -5,6 +5,6 @@
 @stop
 
 @section('corpo')
-	<h1>codigo: {{cod_funcionario}}</h1>
+	<h1>codigo: <?php $cod_funcionario  ?></h1>
 
 @stop

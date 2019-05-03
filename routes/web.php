@@ -28,12 +28,12 @@ Route::prefix('/cadastro')->group(function(){
 
 	Route::post('/funcionario/adicionar', 'FuncionarioController@adicionaFuncionario');
 	
-	Route::get('/contrato', 'ContratoController@formularioContrato');
+	Route::get('/contrato/{id}', 'ContratoController@formularioContrato')->name('contrato');;
 	
 	Route::post('/contrato/adicionar', 'ContratoController@adicionaContrato');
 
 	/*
-	Route::get('/contrato', function(){
+	Route::get('/contrato/{id}', function(){
 		return view('cadteste');
 	});
 	*/
