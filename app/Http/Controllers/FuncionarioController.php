@@ -11,7 +11,7 @@ class FuncionarioController extends Controller{
     
     public function listaFuncionario(){
 
-		$funcionarios = DB::select('select * from funcionarios');
+		$funcionarios = Funcionario::all();
 		
 		return view('funcionario', compact('funcionarios'));
 	}

@@ -13,10 +13,10 @@
 			</div>
 			<div>
 				<ul class="nav navbar-nav">
-					<li><a href=""> Adicionar Funcionario </a></li>
-					<li><a href=""> Adicionar Avaliação </a></li>
-					<li><a href=""> Pesquisar Funcionario </a></li>
-					<li><a href=""> Adicionar Usuario Sistema</a></li>
+					<li><a href="/labengenharia/public/cadastro/funcionario/"> Adicionar Funcionario </a></li>
+					<li><a href="/labengenharia/public/busca/funcionarios/"> Pesquisar Funcionario </a></li>
+					<li><a href="/labengenharia/public/busca/avaliacao/"> Adicionar Avaliação </a></li>
+					<li><a href="/labengenharia/public/cadastro/usuario/"> Adicionar Usuario Sistema</a></li>
 					<li><a href=""> SAIR </a></li>
 				</ul>
 			</div>

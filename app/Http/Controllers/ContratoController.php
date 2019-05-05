@@ -48,9 +48,7 @@ class ContratoController extends Controller{
 		$contrato = new Contrato($parametros);
 		$contrato->save();
 
-		return redirect('/funcionario')->withInput();
-
-
+		return redirect('/busca/funcionarios')->withInput();
 
 	}
 
