@@ -35,7 +35,7 @@
 				<td>
 					<input class="form-control" type="text" name="obra_trabalhada">
 				
-					<input class="form-control" type="hidden" value="{{$cod_funcionario}}" name="cod_funcionario">
+					<input type="hidden" value="{{$cod_funcionario}}" name="cod_funcionario">
 				</td>
 			</tr>
 			<tr>		

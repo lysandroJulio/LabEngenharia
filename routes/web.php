@@ -17,10 +17,10 @@ Route::prefix('/cadastro')->group(function(){
 	
 	Route::post('/contrato/adicionar', 'ContratoController@adicionaContrato');
 	
-	Route::get('/avaliacao', function(){
-		return view('cadAvaliacao');
-	});
+	Route::get('/avaliacao/redirect', 'AvaliacaoController@redirectAvaliacao');
 	
+	Route::get('/avaliacao/{id}', 'AvaliacaoController@formularioAvaliacao')->name('avaliacao');
+
 	Route::get('/usuario', function(){
 		return view('cadUsuario');
 	});
@@ -30,7 +30,7 @@ Route::prefix('/busca')->group(function(){
 
 	Route::get('/funcionarios', 'FuncionarioController@listaFuncionario');
 	
-	Route::get('/avaliacao', 'AvaliacaoController@listaFuncionariosComAvaliacao');
+	Route::get('/avaliacao', 'AvaliacaoController@listaFuncionariosSemAvaliacao');
 
 	Route::get('/funcionario', function(){
 		return view('bfuncionario');

@@ -22,16 +22,19 @@
 </table>
 
 <table class="table">
-	<form action="/labengenharia/public/cadastro/avaliacao/" method="get">
+	
+		
 	@foreach($funcionarios as $funcionario)
 	<tr>
 		<td> {{$funcionario->cpf_funcionario}} </td>
 		<td> {{$funcionario->nome_funcionario}} </td>
 		<td> {{$funcionario->telefone1}} </td>
+	<form action="/labengenharia/public/cadastro/avaliacao/redirect" method="get">
+		<td><input type="hidden" name="cod_funcionario" value= "{{$funcionario->cod_funcionario}}"></td>
 		<td> <input type="submit" class="btn btn-warning" value="ADICIONAR AVALIAÇÃO"> </td>
 	</tr>
-	@endforeach
 	</form>
+	@endforeach
 </table>
 
 @stop
