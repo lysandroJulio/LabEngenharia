@@ -12,4 +12,6 @@ class Avaliacao extends Model
     //ignora os campos de datacriacao e dataupdate no banco
     public $timestamps = false;
 
+    protected $fillable = array('cod_avaliacao','conhecimento_pratico','relacionamento_superior','relacionamento_equipe','respeita_normas','assiduidade','epis_correto','cuidado_ferramentas','dinamico','comportamento_obra','comportamento_alojamento','cod_contrato');
+
 }

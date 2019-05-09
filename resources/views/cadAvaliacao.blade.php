@@ -11,32 +11,32 @@
 		
 		//ACHAR UMA FORMA DE BUSCAR OS DADOS DO FUNCIONARIO PARA EXIBIR NA TELA
 	?>
-	<form action="" method="post">
+	<form action="/labengenharia/public/cadastro/avaliacao/adicionar" method="post">
 		<table class="table table-hover">
 			<tr>
 
 				<td><input type="hidden" name="_token" value="{{csrf_token()}}"/>
-					<input type="hidden" value="{{$funcionario->cod_funcionario}}" name="cod_funcionario">
-				<input type="hidden" name="cod_contrato" value="">Nome:</td>
-				<td colspan="4"><input class="form-control" type="text" name="nome_funcionario" value=""> </td>
+					<input type="hidden" value="{{$funcionario[0]->cod_funcionario}}" name="cod_funcionario">
+				<input type="hidden" name="cod_contrato" value="{{$funcionario[0]->cod_contrato}}">Nome:</td>
+				<td colspan="4"><input class="form-control" type="text" name="nome_funcionario" value="{{$funcionario[0]->nome_funcionario}}"  disabled> </td>
 			</tr>
 			<tr>
 				<td>Cargo:</td>
-				<td><input class="form-control" type="text" name="descricao_cargo" value=""> </td>
+				<td><input class="form-control" type="text" name="descricao_cargo" value="{{$funcionario[0]->descricao_cargo}}"  disabled> </td>
 				<td></td>
 				<td>Obra Trabalhada:</td>
-				<td><input class="form-control" type="text" name="obra_trabalhada" value=""> </td>
+				<td><input class="form-control" type="text" name="obra_trabalhada" value="{{$funcionario[0]->obra_trabalhada}}"  disabled> </td>
 			</tr>
 			<tr>
 				<td>Data Admissão:</td>
-				<td><input class="form-control" type="text" name="data_admissao" value=""> </td>
+				<td><input class="form-control" type="text" name="data_admissao" value="{{$funcionario[0]->data_admissao}}"  disabled> </td>
 				<td></td>
 				<td>Data Demissão:</td>
-				<td><input class="form-control" type="text" name="data_demissao" value=""> </td>
+				<td><input class="form-control" type="text" name="data_demissao" value="" autofocus> </td>
 			</tr>
 			<tr>
 				<td>Observações:</td>
-				<td colspan="4"><textarea class="form-control" name="observacoes_contrato">TEXTO VAI AQUI</textarea> </td>
+				<td colspan="4"><textarea class="form-control" name="observacoes_contrato"  disabled>{{$funcionario[0]->observacoes_contrato}}</textarea> </td>
 			</tr>
 			<tr>		
 				<td></td>

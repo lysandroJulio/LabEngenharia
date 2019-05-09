@@ -21,6 +21,8 @@ Route::prefix('/cadastro')->group(function(){
 	
 	Route::get('/avaliacao/{id}', 'AvaliacaoController@formularioAvaliacao')->name('avaliacao');
 
+	Route::post('/avaliacao/adicionar', 'AvaliacaoController@adicionaAvaliacao');
+
 	Route::get('/usuario', function(){
 		return view('cadUsuario');
 	});
@@ -28,7 +30,7 @@ Route::prefix('/cadastro')->group(function(){
 
 Route::prefix('/busca')->group(function(){
 
-	Route::get('/funcionarios', 'FuncionarioController@listaFuncionario');
+	Route::get('/funcionarios', 'FuncionarioController@listaFuncionario')->name('funcionarios');
 	
 	Route::get('/avaliacao', 'AvaliacaoController@listaFuncionariosSemAvaliacao');
 
