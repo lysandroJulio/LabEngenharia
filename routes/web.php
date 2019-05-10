@@ -34,6 +34,10 @@ Route::prefix('/busca')->group(function(){
 	
 	Route::get('/avaliacao', 'AvaliacaoController@listaFuncionariosSemAvaliacao');
 
+	Route::get('/avaliacao/redirect', 'AvaliacaoController@redirectBusca');
+
+	Route::get('/avaliacao/{id}', 'AvaliacaoController@listaFuncionariosComAvaliacao')->name('buscaAvaliacao');
+
 	Route::get('/funcionario', function(){
 		return view('bfuncionario');
 	});
