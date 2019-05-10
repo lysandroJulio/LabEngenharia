@@ -5,9 +5,11 @@
 @stop
 
 @section('corpo')
+<br>
 	<h1>Avaliacão de Desempenho</h1>
+	<div class="container">
 	<form action="/labengenharia/public/busca/funcionarios/" method="get">
-		<table class="table table-hover">
+		<table class="table">
 			<tr>
 				<td>Nome:</td>
 				<td colspan="4"><input class="form-control" type="text" name="nome_funcionario" value="{{$funcionario[0]->nome_funcionario}}"  disabled> </td>
@@ -27,25 +29,35 @@
 				<td><input class="form-control" type="text" name="data_demissao" value="{{$funcionario[0]->data_demissao}}" disabled> </td>
 			</tr>
 			<tr>
+				<td>Entrou com Processo Judicial:</td>
+				<td>
+					<input type="radio" name="acao_judicial" value="1" <?php echo $funcionario[0]->acao_judicial == 1 ? "checked" : "disabled"; ?>> SIM
+					<input type="radio" name="acao_judicial" value="2" <?php echo $funcionario[0]->acao_judicial == 0 ? "checked" : "disabled"; ?>> NÃO
+				</td>
+				<td></td>
+
+				<td>Testemunhou em Processo Judicial:</td>
+				<td>
+					<input type="radio" name="testemunha_judicial" value="1" <?php echo $funcionario[0]->testemunha_judicial == 1 ? "checked" : "disabled"; ?>> SIM
+					<input type="radio" name="testemunha_judicial" value="2" <?php echo $funcionario[0]->testemunha_judicial == 0 ? "checked" : "disabled"; ?>> NÃO
+				</td>
+			</tr>
+			<tr>
 				<td>Observações:</td>
 				<td colspan="4"><textarea class="form-control" name="observacoes_contrato"  disabled>{{$funcionario[0]->observacoes_contrato}}</textarea> </td>
 			</tr>
-			<tr>		
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
+		</table><br>
+
+		<table class="table table-hover">		
 			<tr>		
 				<td colspan="2">ITENS AVALIADOS</td>
-				<td>PESO</td>
-				<td colspan="3"></td>
+				<td colspan="2">PESO</td>
+				<td ></td>
 			</tr>
 			<tr>		
 				<td colspan="2">Conhecimentos Praticos</td>
 				<td>1</td>
-				<td colspan="5">
+				<td colspan="2">
 					<input type="radio" name="conhecimento_pratico" value="1" <?php echo $funcionario[0]->conhecimento_pratico == 1 ? "checked" : "disabled"; ?>> 1 - Ruim
 					<input type="radio" name="conhecimento_pratico" value="2" <?php echo $funcionario[0]->conhecimento_pratico == 2 ? "checked" : "disabled"; ?>> 2 - Regular
 					<input type="radio" name="conhecimento_pratico" value="3" <?php echo $funcionario[0]->conhecimento_pratico == 3 ? "checked" : "disabled"; ?>> 3 - Bom
@@ -56,7 +68,7 @@
 			<tr>		
 				<td colspan="2">Relacionamento com Superior Imediato</td>
 				<td>2</td>
-				<td colspan="5">
+				<td colspan="4">
 					<input type="radio" name="relacionamento_superior" value="1" <?php echo $funcionario[0]->relacionamento_superior == 1 ? "checked" : "disabled"; ?>> 1 - Ruim
 					<input type="radio" name="relacionamento_superior" value="2" <?php echo $funcionario[0]->relacionamento_superior == 2 ? "checked" : "disabled"; ?>> 2 - Regular
 					<input type="radio" name="relacionamento_superior" value="3" <?php echo $funcionario[0]->relacionamento_superior == 3 ? "checked" : "disabled"; ?>> 3 - Bom
@@ -164,4 +176,5 @@
 			</tr>
 		</table>
 	</form>
+</div>
 @stop

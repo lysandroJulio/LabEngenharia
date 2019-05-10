@@ -5,7 +5,7 @@
 @stop
 
 @section('corpo')
-
+<br>
 	<form action="/labengenharia/public/cadastro/funcionario/adicionar" method="post">
 		<h1>Adicionando um Funcionario</h1>
 		<input type="hidden" name="_token" value="{{csrf_token()}}"/>

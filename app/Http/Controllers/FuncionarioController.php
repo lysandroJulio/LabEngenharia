@@ -14,6 +14,8 @@ class FuncionarioController extends Controller{
 		//$funcionarios = Funcionario::all();
 		$funcionarios = DB::table('funcionarios')->join('contrato', 'funcionarios.cod_funcionario', '=', 'contrato.cod_funcionario')->select('funcionarios.*')->whereNotNull('contrato.data_demissao')->get();
 
+			
+
 		return view('buscaFuncionario', compact('funcionarios'));
 	}
 

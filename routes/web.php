@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::prefix('/cadastro')->group(function(){
@@ -47,20 +47,11 @@ Route::prefix('/busca')->group(function(){
 	});
 });
 
-Route::get('/contrato', function(){
-	return view('contrato');
-});
 
-Route::get('/avaliacao', function(){
-	return view('avaliacao');
-});
-
-
-/*
-Route::get('/contrato/{id}', function(){
+Route::get('/teste', function(){
 	return view('cadteste');
 });
-
+/*
 Route::get('/', function () {
     return view('index');
 });

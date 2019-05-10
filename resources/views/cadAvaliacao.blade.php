@@ -5,16 +5,11 @@
 @stop
 
 @section('corpo')
+	<br>
 	<h1>Cadastro da Avaliacão de Desempenho</h1>
-
-	<?php 
-		
-		//ACHAR UMA FORMA DE BUSCAR OS DADOS DO FUNCIONARIO PARA EXIBIR NA TELA
-	?>
 	<form action="/labengenharia/public/cadastro/avaliacao/adicionar" method="post">
 		<table class="table table-hover">
 			<tr>
-
 				<td><input type="hidden" name="_token" value="{{csrf_token()}}"/>
 					<input type="hidden" value="{{$funcionario[0]->cod_funcionario}}" name="cod_funcionario">
 				<input type="hidden" name="cod_contrato" value="{{$funcionario[0]->cod_contrato}}">Nome:</td>
